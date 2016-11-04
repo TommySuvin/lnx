@@ -10,10 +10,10 @@ fi
 #Setting up Tmux Profile
 tmux_count=`tmux ls | wc -l`
  if [[ "$tmux_count" == "0" ]];   then    
-  tmux new-session -d -s "OEM"    
+  tmux new-session -d -s "DB_ADMIN"    
   tmux split-window -v    
   tmux split-window -h    
-  tmux attach-session -t "OEM"
+  tmux attach-session -t "DB_ADMIN"
 else    
   if [[ -z "$TMUX" ]]; then        
     if [[ "$tmux_count" == "1" ]]; then            
@@ -21,10 +21,10 @@ else   
            else            
              session_id=`echo $tmux_count`      
      fi    
-              tmux new-session -d -s "OEM".$session_id    
+              tmux new-session -d -s "DB_ADMIN".$session_id    
               tmux split-window -v    
               tmux split-window -h    
-              tmux attach-session -t "OEM".$session_id    
+              tmux attach-session -t "DB_ADMIN".$session_id    
    fi
   fi
  
